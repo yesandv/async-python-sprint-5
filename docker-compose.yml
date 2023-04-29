@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+    image: yesandv
+    container_name: async-app
+    env_file: ./.env
+    entrypoint: ./db_start.sh
+    ports:
+      - "8080:8080"
