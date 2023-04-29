@@ -7,6 +7,6 @@ services:
     image: yesandv
     container_name: async-app
     env_file: ./.env
-    entrypoint: ./db_start.sh
+    entrypoint: ./start.sh
     ports:
       - "8080:8080"
