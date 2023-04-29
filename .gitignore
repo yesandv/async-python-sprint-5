@@ -1,4 +1,7 @@
-
 .idea/
 __pycache__/
 *.pyc
+*.log
+*.db
+.DS_Store
+.env
