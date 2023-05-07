@@ -9,7 +9,8 @@ class Settings(BaseSettings):
     port: int = 8080
     base_dir: str = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     db: str = base_dir + "/storage.db"
-    sqlite_dsn: str = Field("sqlite+aiosqlite:///" + db)
+    sqlite_dsn: str = "sqlite+aiosqlite:///" + db
+    pg_dsn: str = "postgresql+asyncpg://postgres:postgres@db:5432/postgres"
     jwt_secret_key: str = Field(..., env="JWT_SECRET_KEY")
     jwt_algorithm: str = Field(..., env="JWT_ALGORITHM")
     jwt_expiration_time: int = Field(..., env="JWT_EXPIRATION_TIME")

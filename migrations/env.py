@@ -15,7 +15,7 @@ from src.models import FileModel, UserModel
 # access to the values within the .ini file in use.
 config = context.config
 
-config.set_main_option('sqlalchemy.url', app_settings.sqlite_dsn)
+config.set_main_option('sqlalchemy.url', app_settings.pg_dsn)
 
 
 # Interpret the config file for Python logging.

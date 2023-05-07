@@ -13,7 +13,7 @@ from src.core import app_settings
 Base = declarative_base()
 
 engine = create_async_engine(
-    url=app_settings.sqlite_dsn, echo=True, future=True
+    url=app_settings.pg_dsn, echo=True, future=True
 )
 async_session = async_sessionmaker(
     bind=engine, expire_on_commit=False, class_=AsyncSession

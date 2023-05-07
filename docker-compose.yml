@@ -10,3 +10,17 @@ services:
     entrypoint: ./start.sh
     ports:
       - "8080:8080"
+    depends_on:
+      - db
+  db:
+    image: postgres:15.2
+    container_name: async-app-db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+volumes:
+  pgdata:
